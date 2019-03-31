@@ -1,1 +1,1 @@
-creación de readme
+Instrucciones de instalación del proyecto
