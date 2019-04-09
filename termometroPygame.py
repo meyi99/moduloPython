@@ -51,12 +51,11 @@ class Selector():
         else:
             return self.__shape[1]
         
-    def change(self, event):
-        if event.type == MOUSEBUTTONDOWN:
-            if self.__tipoUnidad == "F":
-                self.__tipoUnidad = "C"
-            else:
-                self.__tipoUnidad = "F"
+    def change(self):
+        if self.__tipoUnidad == "F":
+            self.__tipoUnidad = "C"
+        else:
+            self.__tipoUnidad = "F"
                 
     def unidad(self):
         '''
@@ -231,7 +230,7 @@ class MainApp():
                     grados = self.entrada.value()
                     nuevaUnidad = self.selector.unidad()
                     temperatura = self.termometro.convertir(grados, nuevaUnidad)
-                    self.entrada.value(temperatura)
+                    self.entrada.value(int(temperatura))
                     
                     
             self.__screen.blit(self.termometro.shape, (0, 50))
